@@ -79,7 +79,7 @@ C:\Program Files (x86)\Common Files\Microsoft Shared\VSTO\10.0\VSTOInstaller.exe
 #### Silent Uninstall
 `VSTOInstaller.exe /uninstall \\C:\Full\path\to\PIEButton.vsto /silent`
 
-None of the above CLI install/uninstall operations should require administrator privileges if the add-in was properly signed during the build procedure, however the silent install will silently fail if the add-in's digital code signing certificate/publisher has not been added to the target host's "Trusted Publishers" certificate store.
+None of the above CLI install/uninstall operations should require administrator privileges if the add-in was properly signed during the build procedure, however the silent install will silently fail if the add-in's digital code signing certificate/publisher has not been added to the target host's "Trusted Publishers" certificate store. It's also worth mentioning that the add-in folder/files doe not *have* to be copied locally to a target workstation to use the above commands; the VSTO installer supports add-ins located on a network share/shared storage. The VSTO installer *is*, however, a little bit particular in how the add-in path is specified (the `\\` prefix in path examples above is required even in the case of a local path).
 
 ## [License]
 
