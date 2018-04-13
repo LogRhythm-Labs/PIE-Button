@@ -52,12 +52,12 @@ Once the solution has finished building, the add-in will appear in the project "
 ## [Install and Usage]
 
 Once the add-in has been built, it can be deployed to target workstations/hosts "by hand" using Windows Explorer, or programmatically using the Windows CLI (the CLI install/uninstall procedures should be compatible with most mass-deployment methodologies).
-#### Add-In Deployment via Windows Explorer/GUI
-##### Install
+### Add-In Deployment via Windows Explorer/GUI
+#### Install
 1. Copy add-in folder to target workstation/host
 2. Open add-in folder in Windows Explorer, double-click "PIEButton.vsto"
 3. Installer window opens, select "Install" button
-##### Uninstall
+#### Uninstall
 1. In Windows Explorer, click the "Start" menu/button
 2. Select "Control Panel" > "Programs" > "Programs and Features"
 3. Scroll through the program list to find "PIEButton"
@@ -65,18 +65,18 @@ Once the add-in has been built, it can be deployed to target workstations/hosts 
 5. Click the "Uninstall" button
 
 
-#### Add-In Deployment via Windows CLI
+### Add-In Deployment via Windows CLI
 All CLI deployment operations utilize an existing Microsoft Office helper program, "VSTOInstaller.exe". This program should be present by default (on any host that has the Microsoft Office software suite installed) at the following location:
 ```
 C:\Program Files (x86)\Common Files\Microsoft Shared\VSTO\10.0\VSTOInstaller.exe
 ```
-##### Install
+#### Install
 `VSTOInstaller.exe /install \\C:\Full\path\to\PIEButton.vsto`
-##### Uninstall
+#### Uninstall
 `VSTOInstaller.exe /uninstall \\C:\Full\path\to\PIEButton.vsto`
-##### Silent Install
+#### Silent Install
 `VSTOInstaller.exe /install \\C:\Full\path\to\PIEButton.vsto /silent`
-##### Silent Uninstall
+#### Silent Uninstall
 `VSTOInstaller.exe /uninstall \\C:\Full\path\to\PIEButton.vsto /silent`
 
 None of the above CLI install/uninstall operations should require administrator privileges if the add-in was properly signed during the build procedure, however the silent install will silently fail if the add-in's digital code signing certificate/publisher has not been added to the target host's "Trusted Publishers" certificate store.
