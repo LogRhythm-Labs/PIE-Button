@@ -1,3 +1,4 @@
+## Phishing Intelligence Engine Outlook Add-In (Button)
 <img src="https://user-images.githubusercontent.com/16614015/38744998-92b3109e-3f00-11e8-89bb-b6b8ee3d27a4.png" width="125px" alt="PIE">
 
 ```
@@ -17,7 +18,9 @@ Copyright 2018 LogRhythm Inc. - See licensing details below
 
 Phishing Intelligence Engine companion Microsoft Outlook add-in that allows for easy reporting of suspected phishing attacks with one click.
 
-<div style="color:#FF0000;font-weight:bold">This add-in/framework is not officially supported by LogRhythm - use at your own risk!</div>
+```diff
+- This add-in/framework is not officially supported by LogRhythm - use at your own risk!
+```
 
 ## [Additional Information]
 
@@ -25,7 +28,7 @@ Currently, the add-in is only compatible with Microsoft Windows Outlook applicat
 * Microsoft Outlook 2013 &#40;Windows&#41;
 * Microsoft Outlook 2016 &#40;Windows&#41;
 
-## [Install and Usage]
+## [Build Procedure]
 
 The project must be built using one of the following Visual Studio editions:
 * Visual Studio 2017 Professional
@@ -45,6 +48,38 @@ Prior to building the project, it is strongly recommended that you have a digita
 9. At the top menu bar, select "Build" > "Build Solution"
 
 Once the solution has finished building, the add-in will appear in the project "bin/debug" or "bin/release" folder (depending on whether you've selected the debug or release build). If the add-in has been built and properly signed at build time, it can be installed by simply double clicking the "PIEButton.vsto" installer file (after copying the add-in folder to a target machine). Detailed instructions for batch/command-line installation will be added to this readme imminently.
+
+## [Install and Usage]
+
+Once the add-in has been built, it can be deployed to target workstations/hosts "by hand" using Windows Explorer, or programmatically using the Windows CLI (the CLI install/uninstall procedures should be compatible with most mass-deployment methodologies).
+#### Add-In Deployment via Windows Explorer/GUI
+##### Install
+1. Copy add-in folder to target workstation/host
+2. Open add-in folder in Windows Explorer, double-click "PIEButton.vsto"
+3. Installer window opens, select "Install" button
+##### Uninstall
+1. In Windows Explorer, click the "Start" menu/button
+2. Select "Control Panel" > "Programs" > "Programs and Features"
+3. Scroll through the program list to find "PIEButton"
+4. Click the "PIEButton" entry to select it
+5. Click the "Uninstall" button
+
+
+#### Add-In Deployment via Windows CLI
+All CLI deployment operations utilize an existing Microsoft Office helper program, "VSTOInstaller.exe". This program should be present by default (on any host that has the Microsoft Office software suite installed) at the following location:
+```
+C:\Program Files (x86)\Common Files\Microsoft Shared\VSTO\10.0\VSTOInstaller.exe
+```
+##### Install
+`VSTOInstaller.exe /install \\C:\Full\path\to\PIEButton.vsto`
+##### Uninstall
+`VSTOInstaller.exe /uninstall \\C:\Full\path\to\PIEButton.vsto`
+##### Silent Install
+`VSTOInstaller.exe /install \\C:\Full\path\to\PIEButton.vsto /silent`
+##### Silent Uninstall
+`VSTOInstaller.exe /uninstall \\C:\Full\path\to\PIEButton.vsto /silent`
+
+None of the above CLI install/uninstall operations should require administrator privileges if the add-in was properly signed during the build procedure, however the silent install will silently fail if the add-in's digital code signing certificate/publisher has not been added to the target host's "Trusted Publishers" certificate store.
 
 ## [License]
 
