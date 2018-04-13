@@ -1,0 +1,13 @@
+*.obj
+*.exe
+*.dll
+*.manifest
+*.pdb
+*.pfx
+*.swp
+/PIEButton/obj/Debug/*
+/PIEButton/obj/Release/*
+/PIEButton/bin/Debug/*
+/PIEButton/bin/Release/*
+/.vs/
+/.vs/*
