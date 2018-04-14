@@ -47,7 +47,7 @@ Prior to building the project, it is strongly recommended that you have a digita
 8. Once the above steps have been completed, click "File" > "Save All" to make sure the changes are saved.
 9. At the top menu bar, select "Build" > "Build Solution"
 
-Once the solution has finished building, the add-in will appear in the project "bin/debug" or "bin/release" folder (depending on whether you've selected the debug or release build). If the add-in has been built and properly signed at build time, it can be installed by simply double clicking the "PIEButton.vsto" installer file (after copying the add-in folder to a target machine). Detailed instructions for batch/command-line installation will be added to this readme imminently.
+Once the solution has finished building, the add-in will appear in the project "bin/debug" or "bin/release" folder (depending on whether you've selected the debug or release build). If the add-in has been built and properly signed at build time, it can be installed by simply double clicking the "PIEButton.vsto" installer file (after copying the add-in folder to a target machine). Please see the "Install and Usage" section below for detailed installation/deployment options.
 
 ## [Install and Usage]
 
