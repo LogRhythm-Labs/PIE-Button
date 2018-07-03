@@ -6,11 +6,6 @@ Phishing Intelligence Engine Outlook Add-In (Button)
 LogRhythm Strategic Integrations Team
 zack . rowland@logrhythm . com
 v2.0 -- April, 2018
-
-Phishing Intelligence Engine
-LogRhythm Security Operations
-greg . foss @ logrhythm . com
-v1.2 -- April, 2018
 ```
 Copyright 2018 LogRhythm Inc. - See licensing details below
 
